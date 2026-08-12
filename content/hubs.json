@@ -1,0 +1,55 @@
+{
+  "site": {
+    "title": "Hubs"
+  },
+  "hubs": [
+    {
+      "slug": "u19-2div",
+      "name": "U19-2Div",
+      "accent": "#2e59a7",
+      "logo": "assets/auxilium.png",
+      "info": [
+        "Lunedì · 19:00–21:00 · Via Cagliari",
+        "Martedì · 19:00–21:00 · Via Robino",
+        "Giovedì · 19:30–21:30 · Via Cagliari"
+      ],
+      "sections": [
+        {
+          "title": "Squadra",
+          "links": [
+            {
+              "label": "Punteggi individuali",
+              "url": "",
+              "icon": "chart-bar"
+            },
+            {
+              "label": "Periodizzazione",
+              "url": "",
+              "icon": "calendar-stats"
+            },
+            {
+              "label": "Vademecum",
+              "url": "",
+              "icon": "book"
+            },
+            {
+              "label": "Presa d’impegno",
+              "url": "",
+              "icon": "signature"
+            }
+          ]
+        },
+        {
+          "title": "Strumenti",
+          "links": [
+            {
+              "label": "PWA Scout",
+              "url": "https://davidaffo.github.io/Simple-Volleyball-Scout-PWA/",
+              "icon": "device-mobile"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

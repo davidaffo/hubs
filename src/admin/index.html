@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hubs · Editor locale</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/admin/admin.css">
+  <script src="/admin/admin.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><span class="brand-mark">H</span><div><strong>Hubs</strong><small>Editor locale</small></div></div>
+    <nav id="hub-list" aria-label="Hub"></nav>
+    <button class="button secondary full" id="add-hub" type="button">＋ Nuovo hub</button>
+  </aside>
+
+  <main class="workspace">
+    <header class="topbar">
+      <div><p class="kicker">Contenuti</p><h1 id="page-title">Caricamento…</h1></div>
+      <div class="top-actions">
+        <a class="button ghost" id="preview" href="/" target="_blank">Anteprima ↗</a>
+        <button class="button primary" id="save" type="button">Salva modifiche</button>
+      </div>
+    </header>
+    <div id="status" role="status" aria-live="polite"></div>
+    <div id="editor"></div>
+  </main>
+
+  <dialog id="icon-dialog">
+    <div class="dialog-head">
+      <div><p class="kicker">Tabler Icons</p><h2>Scegli un’icona</h2></div>
+      <button class="icon-button" id="close-icons" type="button" aria-label="Chiudi">×</button>
+    </div>
+    <input class="search" id="icon-search" type="search" placeholder="Cerca: musica, github, calendario…" autocomplete="off">
+    <div class="icon-grid" id="icon-grid"></div>
+    <p class="icon-count" id="icon-count"></p>
+  </dialog>
+
+  <template id="empty-template"><div class="empty"><strong>Nessun hub</strong><span>Creane uno per iniziare.</span></div></template>
+</body>
+</html>

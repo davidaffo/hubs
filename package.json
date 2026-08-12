@@ -1,0 +1,12 @@
+{
+  "name": "hubs",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "node scripts/dev.mjs"
+  },
+  "dependencies": {
+    "@tabler/icons": "^3.46.0"
+  }
+}
