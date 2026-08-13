@@ -5,7 +5,7 @@
   "hubs": [
     {
       "slug": "u19-2div",
-      "name": "U19-2Div",
+      "name": "U19-2Div Auxilium",
       "accent": "#2e59a7",
       "logo": "assets/auxilium.png",
       "info": [
@@ -65,6 +65,84 @@
           ]
         }
       ]
+    },
+    {
+      "slug": "allenatori-auxilium",
+      "name": "Allenatori Auxilium",
+      "accent": "#573be3",
+      "sections": [
+        {
+          "title": "Cloud",
+          "links": [
+            {
+              "label": "Cloud",
+              "url": "https://nx100087.your-storageshare.de/",
+              "icon": "brand-nextcloud"
+            },
+            {
+              "label": "Calendario",
+              "url": "https://nx100087.your-storageshare.de/apps/calendar/",
+              "icon": "calendar"
+            }
+          ]
+        },
+        {
+          "title": "Documenti da leggere",
+          "links": [
+            {
+              "label": "Vademecum dell'allenatore",
+              "url": "https://nx100087.your-storageshare.de/f/131002",
+              "icon": "book"
+            },
+            {
+              "label": "Materiale coordinamento tecnico",
+              "url": "https://nx100087.your-storageshare.de/f/121762",
+              "icon": "alert-circle"
+            },
+            {
+              "label": "Protocollo di comunicazione",
+              "url": "https://nx100087.your-storageshare.de/f/147733",
+              "icon": "speakerphone"
+            }
+          ]
+        },
+        {
+          "title": "Applicazioni",
+          "links": [
+            {
+              "label": "Registro presenze",
+              "url": "https://davidaffo.github.io/attendance-tracker/",
+              "icon": "calendar-check"
+            },
+            {
+              "label": "PWA Scout",
+              "url": "https://davidaffo.github.io/Simple-Volleyball-Scout-PWA/",
+              "icon": "device-mobile-search"
+            },
+            {
+              "label": "Metronomo",
+              "url": "https://davidaffo.github.io/metronome/",
+              "icon": "metronome"
+            }
+          ]
+        },
+        {
+          "title": "Tutorial",
+          "links": [
+            {
+              "label": "Corso scout base",
+              "url": "https://www.youtube.com/watch?v=KKjv9yF8wX0",
+              "icon": "video"
+            },
+            {
+              "label": "Corso scout rilevazione",
+              "url": "https://youtu.be/8jOidSjegBA",
+              "icon": "video"
+            }
+          ]
+        }
+      ],
+      "logo": "assets/auxilium.png"
     }
   ]
 }
