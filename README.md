@@ -50,3 +50,19 @@ La versione pubblicabile viene generata in `docs/`.
 Su GitHub vai in **Settings → Pages**, scegli **Deploy from a branch**, seleziona il branch principale e la cartella **`/docs`**. I percorsi sono relativi, quindi funzionano sia su `utente.github.io/hubs/` sia su un dominio personalizzato senza configurare un `baseUrl`.
 
 La cartella `resources/` contiene soltanto riferimenti di progetto e non entra nella build pubblica.
+
+### Build, commit e push in un comando
+
+Dopo aver salvato le modifiche dall'admin, pubblicale con:
+
+```bash
+npm run publish -- "Aggiorna hub U19"
+```
+
+Il comando rigenera `docs/`, aggiunge soltanto i file del progetto, crea il commit e fa push sul branch corrente. Se ometti il messaggio viene usata automaticamente la data e l'ora:
+
+```bash
+npm run publish
+```
+
+Se non ci sono modifiche, non crea un commit vuoto ma verifica comunque il push. Eventuali errori di build, commit o rete interrompono il processo senza nasconderli.
