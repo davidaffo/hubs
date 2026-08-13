@@ -10,7 +10,7 @@ Avvia l'editor locale:
 npm run dev
 ```
 
-Apri `http://localhost:4173/admin/`. Da qui puoi creare, modificare, riordinare ed eliminare hub, sezioni e link, oltre a cercare visivamente tra le icone. Il pulsante **Salva modifiche** aggiorna `content/hubs.json` e rigenera subito l'anteprima.
+Apri `http://localhost:4173/admin/`. Da qui puoi creare, modificare, riordinare ed eliminare hub, sezioni e link, oltre a cercare visivamente tra le icone. Trascina un link dalla maniglia `⠿` per riordinarlo o spostarlo in un'altra sezione. Il pulsante **Salva modifiche** aggiorna `content/hubs.json` e rigenera subito l'anteprima.
 
 Ogni hub può avere anche un logo e brevi informazioni in testata. Per immagini locali, inserisci il file in `src/public/assets/` e usa un percorso come `assets/logo.png`.
 

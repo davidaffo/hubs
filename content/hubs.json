@@ -18,34 +18,49 @@
           "title": "Squadra",
           "links": [
             {
-              "label": "Punteggi individuali",
-              "url": "",
-              "icon": "chart-bar"
-            },
-            {
               "label": "Periodizzazione",
-              "url": "",
+              "url": "https://nx100087.your-storageshare.de/f/121528",
               "icon": "calendar-stats"
             },
             {
-              "label": "Vademecum",
-              "url": "",
+              "label": "Registro presenze",
+              "url": "https://nx100087.your-storageshare.de/f/126550",
+              "icon": "calendar-check"
+            },
+            {
+              "label": "Punteggi individuali",
+              "url": "https://nx100087.your-storageshare.de/f/122980",
+              "icon": "chart-bar"
+            },
+            {
+              "label": "Vademecum di squadra",
+              "url": "https://nx100087.your-storageshare.de/f/99415",
               "icon": "book"
             },
             {
               "label": "Presa d’impegno",
-              "url": "",
+              "url": "https://nx100087.your-storageshare.de/f/99403",
               "icon": "signature"
             }
           ]
         },
         {
-          "title": "Strumenti",
+          "title": "Partite",
           "links": [
+            {
+              "label": "Video Partite",
+              "url": "https://www.youtube.com/playlist?list=PLCZw-Jn68MYs",
+              "icon": "brand-youtube"
+            },
             {
               "label": "PWA Scout",
               "url": "https://davidaffo.github.io/Simple-Volleyball-Scout-PWA/",
               "icon": "device-mobile"
+            },
+            {
+              "label": "Playlist pre-partita",
+              "url": "https://open.spotify.com/playlist/4uohaJchIbWv52r9D0HQqJ?si=ef887d5a8ef04371&pt=49bb27bbce40d6c98e3a90f2f7319ee8",
+              "icon": "brand-spotify"
             }
           ]
         }

@@ -3,6 +3,7 @@ let icons = [];
 let activeHub = 0;
 let iconTarget = null;
 let dirty = false;
+let draggedLink = null;
 
 const $ = (selector, root = document) => root.querySelector(selector);
 const hubList = $("#hub-list");
@@ -55,13 +56,14 @@ function renderSection(section, sectionIndex) {
         <button class="icon-button delete" data-action="delete-section" title="Elimina sezione">×</button>
       </div>
     </header>
-    <div>${section.links.map((link, linkIndex) => renderLink(link, linkIndex)).join("")}</div>
+    <div class="link-list${section.links.length ? "" : " empty-list"}" data-link-list>${section.links.map((link, linkIndex) => renderLink(link, linkIndex)).join("")}</div>
     <button class="button ghost add-link" data-action="add-link">＋ Aggiungi link</button>
   </section>`;
 }
 
 function renderLink(link, linkIndex) {
   return `<div class="link-row" data-link="${linkIndex}">
+    <button class="drag-handle" type="button" draggable="true" aria-label="Trascina per riordinare o cambiare categoria" title="Trascina per spostare">⠿</button>
     <button class="icon-choice" data-action="choose-icon" title="Scegli icona"><img src="/admin/icon/${encodeURIComponent(link.icon || "link")}.svg" alt=""></button>
     <input class="link-label-input" type="text" aria-label="Etichetta" placeholder="Nome del link" value="${attr(link.label)}">
     <input class="link-url-input" type="text" inputmode="url" aria-label="Indirizzo (facoltativo)" placeholder="URL facoltativo" value="${attr(link.url)}">
@@ -114,6 +116,69 @@ editor.addEventListener("click", (event) => {
   }
   markDirty();
   render();
+});
+
+editor.addEventListener("dragstart", (event) => {
+  const handle = event.target.closest(".drag-handle");
+  if (!handle) return;
+  const linkElement = handle.closest("[data-link]");
+  const sectionElement = handle.closest("[data-section]");
+  syncVisibleFields();
+  draggedLink = {
+    sectionIndex: Number(sectionElement.dataset.section),
+    linkIndex: Number(linkElement.dataset.link)
+  };
+  linkElement.classList.add("dragging");
+  event.dataTransfer.effectAllowed = "move";
+  event.dataTransfer.setData("text/plain", `${draggedLink.sectionIndex}:${draggedLink.linkIndex}`);
+});
+
+editor.addEventListener("dragover", (event) => {
+  if (!draggedLink) return;
+  const list = event.target.closest("[data-link-list]");
+  if (!list) return;
+  event.preventDefault();
+  event.dataTransfer.dropEffect = "move";
+  clearDropIndicators();
+  list.closest("[data-section]").classList.add("drop-section");
+  const row = event.target.closest("[data-link]");
+  if (row && !row.classList.contains("dragging")) {
+    const after = event.clientY > row.getBoundingClientRect().top + row.offsetHeight / 2;
+    row.classList.add(after ? "drop-after" : "drop-before");
+  } else if (!row) {
+    list.classList.add("drop-empty");
+  }
+});
+
+editor.addEventListener("drop", (event) => {
+  if (!draggedLink) return;
+  const list = event.target.closest("[data-link-list]");
+  if (!list) return;
+  event.preventDefault();
+  const targetSection = Number(list.closest("[data-section]").dataset.section);
+  const row = event.target.closest("[data-link]");
+  if (row?.classList.contains("dragging")) {
+    draggedLink = null;
+    clearDropIndicators();
+    row.classList.remove("dragging");
+    return;
+  }
+  let targetIndex = config.hubs[activeHub].sections[targetSection].links.length;
+  if (row) {
+    targetIndex = Number(row.dataset.link);
+    if (event.clientY > row.getBoundingClientRect().top + row.offsetHeight / 2) targetIndex += 1;
+  }
+  moveLink(draggedLink.sectionIndex, draggedLink.linkIndex, targetSection, targetIndex);
+  draggedLink = null;
+  clearDropIndicators();
+  markDirty();
+  render();
+});
+
+editor.addEventListener("dragend", () => {
+  draggedLink = null;
+  clearDropIndicators();
+  editor.querySelectorAll(".dragging").forEach((element) => element.classList.remove("dragging"));
 });
 
 $("#add-hub").addEventListener("click", () => {
@@ -192,6 +257,16 @@ $("#icon-grid").addEventListener("click", (event) => {
 window.addEventListener("beforeunload", (event) => { if (dirty) event.preventDefault(); });
 
 function move(items, from, to) { if (to >= 0 && to < items.length) items.splice(to, 0, items.splice(from, 1)[0]); }
+function moveLink(sourceSection, sourceIndex, targetSection, targetIndex) {
+  const sections = config.hubs[activeHub].sections;
+  const [link] = sections[sourceSection].links.splice(sourceIndex, 1);
+  if (sourceSection === targetSection && sourceIndex < targetIndex) targetIndex -= 1;
+  targetIndex = Math.max(0, Math.min(targetIndex, sections[targetSection].links.length));
+  sections[targetSection].links.splice(targetIndex, 0, link);
+}
+function clearDropIndicators() {
+  editor.querySelectorAll(".drop-section, .drop-before, .drop-after, .drop-empty").forEach((element) => element.classList.remove("drop-section", "drop-before", "drop-after", "drop-empty"));
+}
 function markDirty() { dirty = true; setStatus("Modifiche non ancora salvate."); }
 function setStatus(message, type = "") { const el = $("#status"); el.textContent = message; el.className = type; }
 function html(value = "") { return String(value).replace(/[&<>"']/g, (character) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[character]); }
