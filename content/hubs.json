@@ -24,7 +24,7 @@
             },
             {
               "label": "Registro presenze",
-              "url": "https://davidaffo.github.io/attendance-tracker/#/coordinatore?nextcloud=https%3A%2F%2Fnx100087.your-storageshare.de",
+              "url": "https://davidaffo.github.io/attendance-tracker/#/consultazione?nextcloud=https%3A%2F%2Fnx100087.your-storageshare.de&role=viewer",
               "icon": "calendar-check"
             },
             {
@@ -111,7 +111,7 @@
           "links": [
             {
               "label": "Registro presenze",
-              "url": "https://davidaffo.github.io/attendance-tracker/",
+              "url": "https://davidaffo.github.io/attendance-tracker/#/allenatore/squadra-condivisa?nextcloud=https%3A%2F%2Fnx100087.your-storageshare.de&role=coach",
               "icon": "calendar-check"
             },
             {
