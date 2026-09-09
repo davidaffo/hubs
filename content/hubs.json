@@ -23,14 +23,9 @@
               "icon": "calendar-stats"
             },
             {
-              "label": "Registro presenze",
+              "label": "Registro presenze e punteggi",
               "url": "https://davidaffo.github.io/attendance-tracker/#/consultazione?nextcloud=https%3A%2F%2Fnx100087.your-storageshare.de&role=viewer",
               "icon": "calendar-check"
-            },
-            {
-              "label": "Punteggi individuali",
-              "url": "https://nx100087.your-storageshare.de/f/122980",
-              "icon": "chart-bar"
             },
             {
               "label": "Vademecum di squadra",
