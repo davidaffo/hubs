@@ -53,6 +53,11 @@
               "icon": "device-mobile"
             },
             {
+              "label": "Tutorial VolleyEye",
+              "url": "https://youtu.be/3umhm51305A",
+              "icon": "school"
+            },
+            {
               "label": "Playlist pre-partita",
               "url": "https://open.spotify.com/playlist/4uohaJchIbWv52r9D0HQqJ?si=ef887d5a8ef04371&pt=49bb27bbce40d6c98e3a90f2f7319ee8",
               "icon": "brand-spotify"
