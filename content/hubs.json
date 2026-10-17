@@ -43,6 +43,11 @@
           "title": "Partite",
           "links": [
             {
+              "label": "Calendario Partite",
+              "url": "https://nx100087.your-storageshare.de/f/176062",
+              "icon": "calendar"
+            },
+            {
               "label": "Video Partite",
               "url": "https://www.youtube.com/playlist?list=PLCZw-Jn68MYs",
               "icon": "brand-youtube"
