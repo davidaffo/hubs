@@ -66,3 +66,12 @@ npm run publish
 ```
 
 Se non ci sono modifiche, non crea un commit vuoto ma verifica comunque il push. Eventuali errori di build, commit o rete interrompono il processo senza nasconderli.
+
+
+## Dominio pubblico
+
+Sito: https://hubs.davidaffo.com/
+
+GitHub Pages pubblica dal branch `master`, cartella `/docs`, con Custom domain `hubs.davidaffo.com`. Il file `src/public/CNAME` conserva il dominio anche dopo una nuova build.
+
+Su Cloudflare usare un CNAME `hubs` verso `davidaffo.github.io`, in modalità DNS only. Abilitare Enforce HTTPS su GitHub quando il certificato è disponibile. I percorsi relativi degli asset supportano la radice del nuovo dominio.

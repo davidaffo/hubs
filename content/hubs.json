@@ -54,7 +54,7 @@
             },
             {
               "label": "VolleyEye",
-              "url": "https://davidaffo.github.io/VolleyEye/",
+              "url": "https://volleyeye.davidaffo.com/",
               "icon": "device-mobile"
             },
             {
@@ -121,12 +121,12 @@
             },
             {
               "label": "PWA Scout",
-              "url": "https://davidaffo.github.io/VolleyEye/",
+              "url": "https://volleyeye.davidaffo.com/",
               "icon": "device-mobile-search"
             },
             {
               "label": "Metronomo",
-              "url": "https://davidaffo.github.io/metronome/",
+              "url": "https://metronome.davidaffo.com/",
               "icon": "metronome"
             }
           ]
